@@ -1,0 +1,231 @@
+
+!.vscode/*.code-snippets
+# ==============================================================================
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# • BEST PRACTICES: Exclude Docker files from builds
+# • BEST PRACTICES: Follow security guidelines
+# • BEST PRACTICES: Review before use, test with your specific .NET setup
+# • BEST PRACTICES: Review for sensitive data
+# • COMBINATION GUIDANCE: Combine with framework/language templates
+# • COMBINATION GUIDANCE: Combine with language or framework templates
+# • COMBINATION GUIDANCE: Use standalone - no need to combine with other templates
+# • DESIGN PHILOSOPHY: Linux-specific only
+# • DESIGN PHILOSOPHY: Modular Docker patterns
+# • DESIGN PHILOSOPHY: Self-contained template with security patterns first
+# • DESIGN PHILOSOPHY: VS Code-specific only
+# • OFFICIAL SOURCES: .NET community patterns and best practices
+# • OFFICIAL SOURCES: Docker best practices and community patterns
+# • OFFICIAL SOURCES: https://code.visualstudio.com/docs
+# • OFFICIAL SOURCES: Linux system administration best practices
+# • PURPOSE: .NET-specific ignore patterns
+# • PURPOSE: Docker-specific patterns
+# • PURPOSE: Linux-specific patterns
+# • PURPOSE: VS Code-specific patterns
+# • SECURITY CONSIDERATIONS: Includes security patterns for .env files and credentials
+# • SECURITY CONSIDERATIONS: Should be excluded from images
+# • SECURITY CONSIDERATIONS: Use common/security.dockerignore for security
+# • TEMPLATE TYPE: COMMON TEMPLATE
+# • TEMPLATE TYPE: FRAMEWORK TEMPLATE
+# • TEMPLATE TYPE: IDE TEMPLATE
+# • TEMPLATE TYPE: OS TEMPLATE
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# and other secrets that must not be included in Docker images
+# Build Artifacts & Distribution
+# Build Output
+# Cache & Temp
+# COMMON TEMPLATE for Docker
+# Configuration & Cache
+# Created by https://dockerignore.com/
+# Dependency Management & Package Cache
+# Development & Runtime Artifacts
+# Docker Files
+# Environment files contain sensitive API keys, database credentials,
+# FRAMEWORK TEMPLATE for .NET
+# IDE TEMPLATE for Visual Studio Code
+# Logs & Debug
+# Logs
+# OS TEMPLATE for Linux
+# Repository: https://github.com/dotnet/core
+# Repository: https://github.com/microsoft/vscode
+# Repository: https://github.com/ronald2wing/.dockerignore
+# Security & Sensitive Data
+# System Files
+# TEMPLATE OVERVIEW & USAGE NOTES
+# Testing & Quality Assurance
+# Testing
+# Tool-Specific Patterns
+# Website: https://code.visualstudio.com/
+# Website: https://dockerignore.com/
+# Website: https://dotnet.microsoft.com/
+# Website: https://www.linux.org/
+**/.bzr/
+**/.cache/
+**/.cvs/
+**/.docker/
+**/.docker-build/
+**/.docker-tmp/
+**/.dotnet/
+**/.git/
+**/.hg/
+**/.nuget/
+**/.svn/
+**/.vscode/coverage/
+**/.vscode/extensions/
+**/.vscode/history/
+**/.vscode/logs/
+**/.vscode/profiles/
+**/.vscode/remote/
+**/.vscode/snippets/
+**/.vscode/test-results/
+**/.vscode/user-data/
+**/_gh_pages/
+**/_ReSharper.*/
+**/amd64/
+**/AnyCPU/
+**/arm64/
+**/bin/
+**/Bin/
+**/build/
+**/config/credentials.*
+**/config/secrets.*
+**/coverage/
+**/Debug/
+**/docker-build/
+**/docker-build-output/
+**/docker-cache/
+**/docker-context/
+**/docker-logs/
+**/docker-networks/
+**/docker-tmp/
+**/docker-volumes/
+**/docs/_site/
+**/docs/output/
+**/dotnet/
+**/Help/
+**/keys/
+**/logs/
+**/NuGet/
+**/obj/
+**/Obj/
+**/out/
+**/packages/
+**/passwords/
+**/private/
+**/publish/
+**/Release/
+**/runtime/
+**/runtimes/
+**/secrets/
+**/temp/
+**/TestResults/
+**/tmp/
+**/x64/
+**/x86/
+*.auth
+*.authz
+*.bak
+*.cache
+*.chm
+*.coverage.xml
+*.crunchsolution
+*.csproj.user
+*.deps.json
+*.fsproj.user
+*.log
+*.ncrunchproject
+*.old
+*.orig
+*.password
+*.resharper
+*.resharper.user
+*.runtimeconfig.dev.json
+*.runtimeconfig.json
+*.save
+*.secret
+*.secrets
+*.sln.docstates
+*.suo
+*.swo
+*.swp
+*.temp
+*.testlog
+*.testrunconfig
+*.testsettings
+*.tmp
+*.token
+*.trx
+*.user
+*.userosscache
+*.vbproj.user
+*.vcxproj.filters
+*.vcxproj.user
+*.vsmdi
+*.vsp
+*.vspscc
+*.vspx
+*_tokens
+*~
+*password*
+._*
+.bash_history
+.bashrc
+.coverage
+.cshrc
+.dockercfg
+.dockerconfig
+.dockerconfig.json
+.dockerignore
+.env
+.env.*
+.fish_history
+.fishrc
+.history
+.login
+.logout
+.profile
+.vscode/argv.json
+.vscode/extension-*
+.vscode/machineid
+.vscode/remote-*
+.vscode/serverdata
+.vscode/state.vscdb
+.zsh_history
+.zshrc
+~$*
+apikeys.*
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Staging.json
+appsettings.Test.json
+connectionstrings.config
+credentials
+database.ini
+database.yml
+dbconfig.xml
+docker-build.log
+docker-compose.ci.yml
+docker-compose.debug.yml
+docker-compose.dev.yml
+docker-compose.example.yml
+docker-compose.local.yml
+docker-compose.override.yml
+docker-compose.test.yml
+Dockerfile.dev
+Dockerfile.example
+Dockerfile.local
+Dockerfile.test
+docker-security-scan.json
+docker-vulnerability-report.json
+grype-report.json
+Properties/launchSettings.json
+secrets.json
+secrets.yaml
+secrets.yml
+snyk-report.json
+TemporaryGeneratedFile_*.cs
+TestResult.xml
+tokens.*
+trivy-report.json
+web.config.local
+web.debug.config
+web.release.config

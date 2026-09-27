@@ -1,0 +1,6 @@
+@infrawatch_backend_HostAddress = http://localhost:5049
+
+GET {{infrawatch_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

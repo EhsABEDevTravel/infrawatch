@@ -1,0 +1,270 @@
+
+!.vscode/*.code-snippets
+# ==============================================================================
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# • BEST PRACTICES: Exclude Docker files from builds
+# • BEST PRACTICES: Follow security guidelines
+# • BEST PRACTICES: Review before use, test with your specific Angular setup
+# • BEST PRACTICES: Review before use, test with your specific React setup
+# • BEST PRACTICES: Review for sensitive data
+# • COMBINATION GUIDANCE: Combine with framework/language templates
+# • COMBINATION GUIDANCE: Combine with language or framework templates
+# • COMBINATION GUIDANCE: Use standalone - no need to combine with other templates
+# • DESIGN PHILOSOPHY: Linux-specific only
+# • DESIGN PHILOSOPHY: Modular Docker patterns
+# • DESIGN PHILOSOPHY: Self-contained template with security patterns first
+# • DESIGN PHILOSOPHY: VS Code-specific only
+# • OFFICIAL SOURCES: Angular community patterns and best practices
+# • OFFICIAL SOURCES: Docker best practices and community patterns
+# • OFFICIAL SOURCES: https://code.visualstudio.com/docs
+# • OFFICIAL SOURCES: Linux system administration best practices
+# • OFFICIAL SOURCES: React community patterns and best practices
+# • PURPOSE: Angular-specific ignore patterns
+# • PURPOSE: Docker-specific patterns
+# • PURPOSE: Linux-specific patterns
+# • PURPOSE: React-specific ignore patterns
+# • PURPOSE: VS Code-specific patterns
+# • SECURITY CONSIDERATIONS: Includes security patterns for .env files and credentials
+# • SECURITY CONSIDERATIONS: Should be excluded from images
+# • SECURITY CONSIDERATIONS: Use common/security.dockerignore for security
+# • TEMPLATE TYPE: COMMON TEMPLATE
+# • TEMPLATE TYPE: FRAMEWORK TEMPLATE
+# • TEMPLATE TYPE: IDE TEMPLATE
+# • TEMPLATE TYPE: OS TEMPLATE
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# and other secrets that must not be included in Docker images
+# Build Artifacts & Distribution
+# Build Output
+# Cache & Temp
+# COMMON TEMPLATE for Docker
+# Configuration & Cache
+# Created by https://dockerignore.com/
+# Dependency Management & Package Cache
+# Development & Runtime Artifacts
+# Docker Files
+# Environment files contain sensitive API keys, database credentials,
+# FRAMEWORK TEMPLATE for Angular
+# FRAMEWORK TEMPLATE for React
+# IDE TEMPLATE for Visual Studio Code
+# Logs & Debug
+# Logs
+# OS TEMPLATE for Linux
+# Repository: https://github.com/angular/angular
+# Repository: https://github.com/facebook/react
+# Repository: https://github.com/microsoft/vscode
+# Repository: https://github.com/ronald2wing/.dockerignore
+# Security & Sensitive Data
+# System Files
+# TEMPLATE OVERVIEW & USAGE NOTES
+# Testing & Quality Assurance
+# Testing
+# Tool-Specific Patterns
+# Website: https://angular.io/
+# Website: https://code.visualstudio.com/
+# Website: https://dockerignore.com/
+# Website: https://reactjs.org/
+# Website: https://www.linux.org/
+**/.angular/
+**/.babel-cache/
+**/.bun/
+**/.bzr/
+**/.cache/
+**/.cra/
+**/.cvs/
+**/.deno/
+**/.deno_cache/
+**/.deno_dir/
+**/.docker/
+**/.docker-build/
+**/.docker-tmp/
+**/.esbuild/
+**/.git/
+**/.hg/
+**/.jest/
+**/.jest-cache/
+**/.npm/
+**/.nx/
+**/.nyc_output/
+**/.out/
+**/.output/
+**/.parcel-cache/
+**/.pnp/
+**/.pnpm/
+**/.pnpm-store/
+**/.react/
+**/.storybook/
+**/.storybook-out/
+**/.svn/
+**/.swc/
+**/.turbo/
+**/.vite/
+**/.vscode/coverage/
+**/.vscode/extensions/
+**/.vscode/history/
+**/.vscode/logs/
+**/.vscode/profiles/
+**/.vscode/remote/
+**/.vscode/snippets/
+**/.vscode/test-results/
+**/.vscode/user-data/
+**/.webpack/
+**/.yarn/
+**/__tests__/__snapshots__/
+**/bower_components/
+**/config/credentials.*
+**/config/secrets.*
+**/coverage/
+**/cypress/
+**/cypress/screenshots/
+**/cypress/videos/
+**/dist/
+**/docker-build/
+**/docker-build-output/
+**/docker-cache/
+**/docker-context/
+**/docker-logs/
+**/docker-networks/
+**/docker-tmp/
+**/docker-volumes/
+**/jest-cache/
+**/keys/
+**/logs/
+**/node_modules/
+**/out/
+**/passwords/
+**/playwright-report/
+**/private/
+**/public/_next/
+**/public/build/
+**/public/static/chunks/
+**/public/static/css/
+**/public/static/media/
+**/secrets/
+**/storybook-static/
+**/styleguide/
+**/temp/
+**/test-results/
+**/tmp/
+*.auth
+*.authz
+*.bak
+*.bun.app
+*.bun.exe
+*.cache
+*.css.map
+*.js.map
+*.log
+*.old
+*.orig
+*.password
+*.save
+*.secret
+*.secrets
+*.swo
+*.swp
+*.temp
+*.tmp
+*.token
+*_tokens
+*~
+*password*
+._*
+.angular-cli.json
+.babelrc
+.babelrc.*
+.bash_history
+.bashrc
+.browserslistrc
+.coverage
+.coverage.*
+.cshrc
+.dockercfg
+.dockerconfig
+.dockerconfig.json
+.dockerignore
+.env
+.env.*
+.eslintcache
+.eslintignore
+.eslintrc
+.eslintrc.*
+.fish_history
+.fishrc
+.history
+.jsbeautifyrc
+.jscsrc
+.jshintrc
+.login
+.logout
+.node_repl_history
+.npmignore
+.npmrc
+.npmrc.*
+.pnp.cjs
+.pnp.js
+.pnp.loader.mjs
+.prettiercache
+.prettierignore
+.prettierrc
+.prettierrc.*
+.profile
+.stylelintcache
+.stylelintignore
+.stylelintrc
+.stylelintrc.*
+.tsbuildinfo
+.vscode/argv.json
+.vscode/extension-*
+.vscode/machineid
+.vscode/remote-*
+.vscode/serverdata
+.vscode/state.vscdb
+.yarnrc
+.yarnrc.yml
+.zsh_history
+.zshrc
+~$*
+angular.json
+apikeys.*
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Staging.json
+bun-debug.log*
+connectionstrings.config
+credentials
+cypress.config.*.timestamp-*
+database.ini
+database.yml
+dbconfig.xml
+deno.lock
+docker-build.log
+docker-compose.ci.yml
+docker-compose.debug.yml
+docker-compose.dev.yml
+docker-compose.example.yml
+docker-compose.local.yml
+docker-compose.override.yml
+docker-compose.test.yml
+Dockerfile.dev
+Dockerfile.example
+Dockerfile.local
+Dockerfile.test
+docker-security-scan.json
+docker-vulnerability-report.json
+grype-report.json
+jest.config.*.timestamp-*
+jsconfig.json
+npm-debug.log*
+pnpm-debug.log*
+pnpm-workspace.yaml
+secrets.json
+secrets.yaml
+secrets.yml
+snyk-report.json
+tokens.*
+trivy-report.json
+tsconfig.*.json
+tsconfig.*.tsbuildinfo
+tsconfig.json
+vitest.config.*.timestamp-*
+yarn-error.log

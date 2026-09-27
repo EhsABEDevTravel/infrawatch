@@ -1,0 +1,278 @@
+############################################
+# Visual Studio / .NET (Official GitHub based)
+############################################
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Visual Studio
+.vs/
+Generated Files/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Aa][Rr][Mm]64[Ee][Cc]/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+artifacts/
+.artifacts/
+
+# Logs
+[Ll]og/
+[Ll]ogs/
+*.log
+*.binlog
+MSBuild_Logs/
+
+# Test Results
+[Tt]est[Rr]esult*/
+*.trx
+CodeCoverage/
+coverage/
+coverage*.json
+coverage*.xml
+coverage*.info
+*.coverage
+*.coveragexml
+BenchmarkDotNet.Artifacts/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+############################################
+# Visual Studio generated files
+############################################
+
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.idb
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+!Directory.Build.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.cachefile
+
+############################################
+# ReSharper / Rider
+############################################
+
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.idea/
+
+############################################
+# TeamCity / NCrunch / DotCover
+############################################
+
+_TeamCity*
+*.dotCover
+_NCrunch_*
+.NCrunch_*
+nCrunchTemp_*
+.axoCover/*
+!.axoCover/settings.json
+
+############################################
+# ClickOnce / Publish
+############################################
+
+publish/
+*.publish.xml
+*.azurePubxml
+*.pubxml
+*.publishproj
+PublishScripts/
+
+############################################
+# Azure
+############################################
+
+csx/
+*.build.csdef
+ecf/
+rcf/
+
+############################################
+# Windows App Packages
+############################################
+
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+*.appx
+*.appxbundle
+*.appxupload
+
+############################################
+# SQL Server
+############################################
+
+*.mdf
+*.ldf
+*.ndf
+
+############################################
+# Fakes / Orleans / StyleCop
+############################################
+
+FakesAssemblies/
+orleans.codegen.cs
+StyleCopReport.xml
+
+############################################
+# Node.js
+############################################
+
+node_modules/
+bower_components/
+
+############################################
+# Angular
+############################################
+
+.angular/
+dist/
+out-tsc/
+tmp/
+coverage/
+e2e/test-output/
+
+############################################
+# React / Next.js / Modern Bundlers
+############################################
+
+build/
+.next/
+.vite/
+.parcel-cache/
+
+############################################
+# TypeScript
+############################################
+
+*.tsbuildinfo
+
+############################################
+# Keep lock files
+############################################
+
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+############################################
+# Environment variables
+############################################
+
+.env
+.env.*
+
+############################################
+# VS Code
+############################################
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+!*.code-workspace
+
+.history/
+*.vsix
+
+############################################
+# npm / Yarn logs
+############################################
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+############################################
+# Docker
+############################################
+
+.docker/
+docker-compose.override.yml
+
+############################################
+# OS files
+############################################
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+############################################
+# Temporary / Backup
+############################################
+
+~$*
+*~
+*.tmp
+*.bak
+*.backup.*
+*.received.*
+
+############################################
+# Python (sometimes used for tooling)
+############################################
+
+__pycache__/
+*.pyc
+
+############################################
+# Misc
+############################################
+
+*.cache
+!*.cache/

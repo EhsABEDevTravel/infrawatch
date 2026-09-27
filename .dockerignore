@@ -1,0 +1,104 @@
+
+!.vscode/*.code-snippets
+# ==============================================================================
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# • BEST PRACTICES: Exclude Docker files from builds
+# • BEST PRACTICES: Follow security guidelines
+# • BEST PRACTICES: Review for sensitive data
+# • COMBINATION GUIDANCE: Combine with framework/language templates
+# • COMBINATION GUIDANCE: Combine with language or framework templates
+# • DESIGN PHILOSOPHY: Linux-specific only
+# • DESIGN PHILOSOPHY: Modular Docker patterns
+# • DESIGN PHILOSOPHY: VS Code-specific only
+# • OFFICIAL SOURCES: Docker best practices and community patterns
+# • OFFICIAL SOURCES: https://code.visualstudio.com/docs
+# • OFFICIAL SOURCES: Linux system administration best practices
+# • PURPOSE: Docker-specific patterns
+# • PURPOSE: Linux-specific patterns
+# • PURPOSE: VS Code-specific patterns
+# • SECURITY CONSIDERATIONS: Should be excluded from images
+# • SECURITY CONSIDERATIONS: Use common/security.dockerignore for security
+# • TEMPLATE TYPE: COMMON TEMPLATE
+# • TEMPLATE TYPE: IDE TEMPLATE
+# • TEMPLATE TYPE: OS TEMPLATE
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# Build Output
+# Cache & Temp
+# COMMON TEMPLATE for Docker
+# Configuration & Cache
+# Created by https://dockerignore.com/
+# Docker Files
+# IDE TEMPLATE for Visual Studio Code
+# Logs & Debug
+# Logs
+# OS TEMPLATE for Linux
+# Repository: https://github.com/microsoft/vscode
+# Repository: https://github.com/ronald2wing/.dockerignore
+# System Files
+# TEMPLATE OVERVIEW & USAGE NOTES
+# Testing
+# Website: https://code.visualstudio.com/
+# Website: https://dockerignore.com/
+# Website: https://www.linux.org/
+**/.docker/
+**/.docker-build/
+**/.docker-tmp/
+**/.vscode/coverage/
+**/.vscode/extensions/
+**/.vscode/history/
+**/.vscode/logs/
+**/.vscode/profiles/
+**/.vscode/remote/
+**/.vscode/snippets/
+**/.vscode/test-results/
+**/.vscode/user-data/
+**/docker-build/
+**/docker-build-output/
+**/docker-cache/
+**/docker-context/
+**/docker-logs/
+**/docker-networks/
+**/docker-tmp/
+**/docker-volumes/
+*.temp
+*.tmp
+*~
+.bash_history
+.bashrc
+.cshrc
+.dockercfg
+.dockerconfig
+.dockerconfig.json
+.dockerignore
+.fish_history
+.fishrc
+.history
+.login
+.logout
+.profile
+.vscode/argv.json
+.vscode/extension-*
+.vscode/machineid
+.vscode/remote-*
+.vscode/serverdata
+.vscode/state.vscdb
+.zsh_history
+.zshrc
+~$*
+docker-build.log
+docker-compose.ci.yml
+docker-compose.debug.yml
+docker-compose.dev.yml
+docker-compose.example.yml
+docker-compose.local.yml
+docker-compose.override.yml
+docker-compose.test.yml
+Dockerfile.dev
+Dockerfile.example
+Dockerfile.local
+Dockerfile.test
+docker-security-scan.json
+docker-vulnerability-report.json
+grype-report.json
+snyk-report.json
+trivy-report.json
