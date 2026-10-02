@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "W5N3KlMPYKI=",
+  "success": true,
+  "projectFilePath": "D:\\Users\\Document\\Code-Project-File\\Projects\\EcosystemFullStackNetBE\\infrawatch\\backend\\infrawatch-backend\\infrawatch-backend.csproj",
+  "expectedPackageFiles": [
+    "D:\\Users\\.nuget\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "D:\\Users\\.nuget\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "D:\\Users\\.nuget\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512",
+    "D:\\Users\\.nuget\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
+    "D:\\Users\\.nuget\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
+    "D:\\Users\\.nuget\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
+    "D:\\Users\\.nuget\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
+  ],
+  "logs": []
+}
