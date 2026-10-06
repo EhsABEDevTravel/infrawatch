@@ -158,66 +158,9 @@ The endpoint causes unexpected disk access errors in production.
 
 ```
 
-## 9. Versioning
-
-Version convention follows [Semantic Versioning](https://semver.org/).
-
-Increment the version based on the changes included in the next release:
-
-#### MAJOR — Breaking changes
-
-Version when you make incompatible API changes
-- Increment when the release contains breaking API, UI, or behavioral changes.
-- Existing consumers may need to update their code or configuration.
-
-Example: `1.4.2` → `2.0.0`
-
-#### MINOR — New features
-
-Version when you add functionality in a backward compatible manner
-- Increment when the release contains backward-compatible features or API/UI changes.
-- Use `feat`commit type as indicator for minor version.
-
-Example: `1.4.2` → `1.5.0`
-
-#### PATCH — Bug fixes and maintenance
-
-Version when you make backward compatible bug fixes
-- Increment when the release contains backward-compatible bug fixes, documentation, refactoring, tests, performance improvements, or maintenance changes.
-
-Example: 1.4.2 → 1.4.3
-
-### Summary
-
-              Does this change require 
-          existing users/clients to update?
-                         │
-              ┌──────────┴──────────┐
-             YES                    NO
-              │                     │
-              ▼                     ▼
-      Is an existing API,     Does it add new
-      behavior, contract,     functionality?
-      or usage broken?              │
-              │              ┌──────┴──────┐
-             YES            YES           NO
-              │              │             │
-              ▼              ▼             ▼
-            MAJOR          MINOR         PATCH
-          1.2.0 → 2.0.0  1.2.0 → 1.3.0  1.2.0 → 1.2.1
-              │              │             │
-              └──────────────┴─────────────┘
-                             │
-                             ▼
-                       New Release
-
-
-```
-Breaking existing usage?  → MAJOR
-New functionality?        → MINOR
-Otherwise                 → PATCH
-```
-
 📍Note
 
 >One important improvement over your original wording is **"backward-compatible"**. A `feat` normally means a new feature, but if the feature changes an existing API in a breaking way, it belongs to the **MAJOR** version instead of MINOR.
+
+> `fix` type commits should be translated to **PATCH** releases. `feat` type commits should be translated to **MINOR** releases. Commits with `BREAKING CHANGE` in the commits, regardless of type, should be translated to **MAJOR** releases. ([Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#how-does-this-relate-to-semver))
+
