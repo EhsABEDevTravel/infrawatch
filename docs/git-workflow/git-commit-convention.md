@@ -1,4 +1,4 @@
-# Git Convention
+# Git Commit Convention
 
 This repository follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. The stylistic rules are inherited from the [Angular commit convention](https://github.com/angular/angular/blob/main/contributing-docs/commit-message-guidelines.md).
 Install Git Convention Extension at 
