@@ -2,6 +2,8 @@
 
 InfraWatch follows a lightweight release process based on **GitHub Flow**, **Semantic Versioning**, and **Conventional Commits**.
 
+Releases are created manually. There is no release automation, and the version is recorded by the Git tag.
+
 ## 1. Release Flow
 
 ```text
@@ -16,7 +18,7 @@ InfraWatch follows a lightweight release process based on **GitHub Flow**, **Sem
              ┌─────────────┼─────────────┐
              │             │             │
              ▼             ▼             ▼
-     BREAKING CHANGE     feat           fix
+     BREAKING CHANGE     feat           fix/perf
              │             │             │
              ▼             ▼             ▼
            MAJOR         MINOR         PATCH
@@ -55,7 +57,7 @@ Typical triggers:
 - Breaking API changes
 - Breaking configuration changes
 - Breaking behavior changes
-- `BREAKING CHANGE` in a commit
+- `BREAKING CHANGE` in a commit footer, or `!` after the type or scope in a commit or PR title
 
 ---
 
@@ -87,8 +89,8 @@ Release:
 
 Increment when the release contains backward-compatible bug fixes.
 
-- A `fix` commit triggers a **PATCH** version.
-- `docs`, `refactor`, `test`, `perf`, and `chore` commits do not automatically trigger a PATCH version.
+- A `fix` or `perf` commit triggers a **PATCH** version.
+- `docs`, `style`, `refactor`, `test`, `build`, `ci`, and `chore` commits do not automatically trigger a PATCH version.
 
 Example:
 
@@ -146,8 +148,8 @@ Before creating a release:
 - Ensure tests and required quality checks pass.
 - Review the commits included in the release.
 - Determine the next version.
-- Update the project version where required.
-- Review release notes or changelog.
+- Update the project version files, if the project has them (see [Version Source](#version-source)).
+- Update `CHANGELOG.md`.
 
 For larger releases that require stabilization, a release branch may be used:
 
@@ -163,6 +165,13 @@ main
                  ▼
                 main
 ```
+
+### Version Source
+
+- The Git tag `vX.Y.Z` is the source of truth for the version.
+- When the backend and frontend projects exist, keep their version fields in sync with the tag: `<Version>` in the backend `.csproj` and `version` in the frontend `package.json`.
+- `CHANGELOG.md` is maintained by hand. Create it with the first release, and write each entry from the commits included in that release.
+- The repository does not yet contain these project files or `CHANGELOG.md`. Until they exist, the tag is the only version record.
 
 ## 5. Create Release Tag
 
@@ -185,7 +194,7 @@ v2.0.0
 Create an annotated tag:
 
 ```bash
-git tag -a v1.5.0 -m "release: v1.5.0"
+git tag -a v1.5.0 -m "v1.5.0"
 ```
 
 Push the tag:
@@ -195,6 +204,8 @@ git push origin v1.5.0
 ```
 
 ## 6. Deployment
+
+No deployment pipeline exists yet. Use this section as the target process once one is defined.
 
 After the release tag is created:
 
@@ -223,7 +234,7 @@ For an urgent production bug:
 ```text
 main
  │
- └── fix/<developer>/<description>
+ └── fix/<DeveloperName>/<description>
               │
               ▼
          Pull Request
@@ -252,8 +263,8 @@ New version: 1.5.1
 [ ] Tests and quality checks pass
 [ ] Review release commits
 [ ] Determine MAJOR / MINOR / PATCH
-[ ] Update project version
-[ ] Review release notes / changelog
+[ ] Update project version files, if any
+[ ] Update CHANGELOG.md
 [ ] Create Git tag
 [ ] Push Git tag
 [ ] Build
@@ -265,9 +276,9 @@ New version: 1.5.1
 ## 9. Release Rules
 
 ```text
-BREAKING CHANGE → MAJOR
+BREAKING CHANGE or ! → MAJOR
 feat            → MINOR
-fix             → PATCH
+fix, perf       → PATCH
 other types     → no automatic version bump
 ```
 
@@ -275,24 +286,20 @@ other types     → no automatic version bump
 
 ### Types
 
-Here are the standard types and its version impact when to use each.
+The type list follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification and the `@commitlint/config-conventional` preset. See [Commit Types](git-commit-convention.md#2-commit-types) for when to use each type.
 
-This convention follows @commitlint/config-conventional, get reference at here [Conventional Commits Guide: Rules, Tools and CI/CD Enforcement
-](https://www.deployhq.com/blog/conventional-commits-a-standardized-approach-to-commit-messages)
+| **Type**   | **Version impact**          |
+| ---------- | --------------------------- |
+| `feat`     | Minor bump                  |
+| `fix`      | Patch bump                  |
+| `perf`     | Patch bump                  |
+| `docs`     | No bump                     |
+| `style`    | No bump                     |
+| `refactor` | No bump                     |
+| `test`     | No bump                     |
+| `build`    | No bump                     |
+| `ci`       | No bump                     |
+| `chore`    | No bump                     |
+| `revert`   | Mirrors the reverted change |
 
-
-| **Type**   | **Purpose**                                           | **Version impact**           |
-| ---------- | ----------------------------------------------------- | ---------------------------- |
-| `feat`     | A new feature visible to users                        | Minor bump                   |
-| `fix`      | A bug fix                                             | Patch bump                   |
-| `docs`     | Documentation only                                    | No release                   |
-| `style`    | Formatting, semicolons, whitespace -- no logic change | No release                   |
-| `refactor` | Code restructuring without changing behaviour         | No release                   |
-| `perf`     | Performance improvement                               | Patch bump                   |
-| `test`     | Adding or updating tests                              | No release                   |
-| `build`    | Build system or external dependency changes           | No release                   |
-| `ci`       | CI/CD configuration changes                           | No release                   |
-| `chore`    | Maintenance tasks (dependency updates, tooling)       | No release                   |
-| `revert`   | Reverts a previous commit                             | Depends on what was reverted |
-
-`feat` and `fix` are the only two types the base specification mandates; everything else is an established convention that the `@commitlint/config-conventional` preset ships with by default. The `revert` type is a common source of confusion -- the spec treats it as a normal commit whose footer references the SHA(s) being reverted (`Refs: <hash>`), and the version impact mirrors whatever change is being undone.
+`feat` and `fix` are the only two types the base specification mandates. The other types come from the `@commitlint/config-conventional` preset. A `revert` commit's version impact mirrors the change it undoes. See [Revert Commit](git-commit-convention.md#8-revert-commit) for the format.
