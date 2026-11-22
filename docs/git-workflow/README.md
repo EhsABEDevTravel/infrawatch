@@ -23,7 +23,7 @@ Follow this workflow when contributing changes:
 1. Create a working branch from `main`.
 2. Make focused changes and write commits following the repository's commit convention.
 3. Push the branch and open a Pull Request.
-4. Get at least one approval and pass the required review and quality checks.
+4. Get 1 approval from another developer and pass the required checks.
 5. **Squash and merge** the Pull Request into `main`. The PR title becomes the commit message on `main`.
 6. Delete the working branch after merging.
 
