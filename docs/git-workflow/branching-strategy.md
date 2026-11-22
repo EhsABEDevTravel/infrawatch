@@ -7,11 +7,11 @@ InfraWatch follows **GitHub Flow**: a simple branch model designed for continuou
 ```text
 main
  │
- ├── feature/<developer>/<description>
+ ├── feat/<DeveloperName>/<description>
  │
- ├── fix/<developer>/<description>
+ ├── fix/<DeveloperName>/<description>
  │
- └── docs/<developer>/<description>
+ └── docs/<DeveloperName>/<description>
 ```
 
 ### `main`
@@ -23,16 +23,23 @@ main
 
 ### Working Branches
 
-Developers create short-lived branches from `main` for a specific change.
+Developers create short-lived branches from `main` for a specific change. The branch prefix is the commit type that best describes the change, so each prefix matches a type in the [commit convention](git-commit-convention.md#2-commit-types).
 
-| Branch | Purpose | Example |
-|---|---|---|
-| `feature/` | New functionality | `feature/AnhNguyen/disk-monitoring` |
-| `fix/` | Bug fixes | `fix/AnhNguyen/disk-usage` |
-| `docs/` | Documentation | `docs/AnhNguyen/git-workflow` |
-| `refactor/` | Code restructuring | `refactor/AnhNguyen/monitoring-service` |
-| `test/` | Test changes | `test/AnhNguyen/monitoring-api` |
-| `chore/` | Maintenance/tooling | `chore/AnhNguyen/update-dependencies` |
+| Branch      | Purpose                               | Example                                  |
+| ----------- | ------------------------------------- | ---------------------------------------- |
+| `feat/`     | New functionality                     | `feat/AnhNguyen/disk-monitoring`         |
+| `fix/`      | Bug fixes                             | `fix/AnhNguyen/disk-usage`               |
+| `perf/`     | Performance improvements              | `perf/AnhNguyen/disk-collection`         |
+| `refactor/` | Code restructuring                    | `refactor/AnhNguyen/monitoring-service`  |
+| `docs/`     | Documentation                         | `docs/AnhNguyen/git-workflow`            |
+| `test/`     | Test changes                          | `test/AnhNguyen/monitoring-api`          |
+| `build/`    | Build system or external dependencies | `build/AnhNguyen/update-dotnet-packages` |
+| `ci/`       | CI configuration                      | `ci/AnhNguyen/add-build-workflow`        |
+| `chore/`    | Maintenance tasks                     | `chore/AnhNguyen/update-docker-config`   |
+| `style/`    | Formatting only                       | `style/AnhNguyen/format-monitoring`      |
+| `revert/`   | Reverting a previous change           | `revert/AnhNguyen/disk-endpoint`         |
+
+Releases are cut from `main` without a release branch. See [Release Process](release-process.md).
 
 ## 2. Development Flow
 
@@ -44,9 +51,9 @@ Developers create short-lived branches from `main` for a specific change.
                        create branch
                             │
                             ▼
-              ┌─────────────────────────┐
-              │ feature/<developer>/... │
-              └────────────┬────────────┘
+              ┌─────────────────────────────┐
+              │ feat/<DeveloperName>/...    │
+              └────────────┬────────────────┘
                            │
                        development
                            │
@@ -61,24 +68,25 @@ Developers create short-lived branches from `main` for a specific change.
                            │
                            ▼
                     ┌─────────────┐
-                    │    main     │
-                    └──────┬──────┘
-                           │
-                         Deploy
+                    │ Squash merge│
+                    │   to main   │
+                    └─────────────┘
 ```
+
+Deployment and tagging happen after the merge, as described in [Release Process](release-process.md).
 
 ## 3. Branch Naming Convention
 
 Use:
 
 ```text
-<type>/<developer>/<short-description>
+<type>/<DeveloperName>/<lowercase-kebab-description>
 ```
 
 Examples:
 
 ```text
-feature/AnhNguyen/disk-monitoring
+feat/AnhNguyen/disk-monitoring
 fix/AnhNguyen/cpu-calculation
 docs/AnhNguyen/git-workflow
 refactor/AnhNguyen/monitoring-service
@@ -86,8 +94,10 @@ refactor/AnhNguyen/monitoring-service
 
 Rules:
 
-- Use lowercase for the branch type and description.
-- Use `/` to separate logical sections.
+- `<type>` is a commit type from the [commit convention](git-commit-convention.md#2-commit-types), in lowercase.
+- `<DeveloperName>` is your name in CamelCase, without spaces. It is the only segment that uses uppercase letters.
+- `<lowercase-kebab-description>` uses lowercase letters, digits, and hyphens.
+- Use `/` to separate the three segments.
 - Keep the description short and meaningful.
 - Use one branch for one logical change.
 - Delete the branch after it has been merged.
@@ -116,77 +126,10 @@ main
 
 This keeps the workflow simple: **`main` is the source of truth, and all development happens through short-lived branches.**
 
-Yes. Since you're using **GitHub Flow**, I would define `release/` as a **short-lived branch used only when preparing a release**, not as a permanent branch.
+Do not push directly to `main`. Every change reaches `main` through a Pull Request.
 
-Add this section:
+There is no `release/` branch. Releases are tagged on `main`at current time. See [Release Process](release-process.md).
 
-## 5. Release Branch
+## 5. References
 
-A `release/` branch is created from `main` when a release requires a dedicated stabilization or release-preparation phase.
-
-```text
-main
- │
- ├── feature/...
- ├── fix/...
- │
- └── release/1.5.0
-          │
-          ├── release preparation
-          ├── version update
-          ├── final fixes
-          └── release validation
-                    │
-                    ▼
-                  main
-                    │
-                  Tag
-                    │
-                  Deploy
-```
-
-### Naming Convention
-
-```text
-release/<version>
-```
-
-Examples:
-
-```text
-release/1.5.0
-release/2.0.0
-```
-
-### Rules
-
-- Create the release branch from `main`.
-- Use the release branch only for release preparation and stabilization.
-- Do not develop new features on a release branch.
-- Only release-related fixes should be added.
-- Update the project version on the release branch.
-- Merge the completed release back into `main`.
-- Create the corresponding Git tag from the released commit.
-- Delete the release branch after the release is completed.
-
-### When to Use
-
-A release branch is **optional**.
-
-For small releases that can be deployed directly from `main`, no release branch is required.
-
-```text
-Normal release:
-
-main ────────────────► tag ───► deploy
-
-
-Release requiring stabilization:
-
-main ──► release/1.5.0 ──► main ──► tag ──► deploy
-```
-
-This keeps `main` as the primary branch while still giving InfraWatch a controlled path for larger or more sensitive releases.
-
-## 6. References
-- [Git Branching Strategies: A Comprehensive Guide](https://dev.to/karmpatel/git-branching-strategies-a-comprehensive-guide-24kh)
+- [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)

@@ -1,0 +1,10 @@
+# <type>[(scope)][!]: <subject>
+#
+# type: build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test
+# scope (optional): a short lowercase word for the area changed. Free text, not checked.
+# !: add only for a breaking change
+# Header: 100 characters or fewer, lowercase type, imperative subject, no trailing period
+#
+# Body (optional): why the change was made. Wrap lines at 100 characters.
+#
+# Footers (optional): BREAKING CHANGE: <what breaks and how to migrate>, Refs #<n>

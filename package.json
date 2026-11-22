@@ -1,0 +1,16 @@
+{
+  "name": "infrawatch",
+  "private": true,
+  "description": "Commit message tooling for InfraWatch (commitlint and husky). Not a release package.",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
+    "husky": "9.1.7"
+  }
+}

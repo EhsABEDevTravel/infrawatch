@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="950" viewBox="0 0 1280 950">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.15" cy="0.05" r="0.6">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/>
+    </marker>
+    <style>
+      .title { font: 700 28px 'Segoe UI', Arial, sans-serif; fill: #e6edf3; }
+      .sub { font: 400 14px 'Segoe UI', Arial, sans-serif; fill: #8b949e; }
+      .label { font: 700 11px 'Segoe UI', Arial, sans-serif; fill: #8b949e; letter-spacing: 1.5px; }
+      .card { fill: #161b22; stroke: #30363d; stroke-width: 1; }
+      .ctitle { font: 700 15px 'Segoe UI', Arial, sans-serif; fill: #e6edf3; }
+      .num { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #0b1020; text-anchor: middle; }
+      .mono { font: 400 11px Consolas, 'Courier New', monospace; fill: #c9d1d9; }
+      .mono12 { font: 400 12px Consolas, 'Courier New', monospace; fill: #e6edf3; }
+      .chipPR { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #e6edf3; }
+      .chipSub { font: 400 11.5px 'Segoe UI', Arial, sans-serif; fill: #8b949e; }
+      .desc { font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #e6edf3; }
+      .foot { font: 400 11px 'Segoe UI', Arial, sans-serif; fill: #8b949e; }
+      .badge { font: 700 12px Consolas, 'Courier New', monospace; text-anchor: middle; }
+      .green { fill: #3fb950; }
+      .amber { fill: #d29922; }
+      .purple { fill: #a371f7; }
+      .grey { fill: #8b949e; }
+      .flow { stroke: #38bdf8; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="950" fill="url(#bg)"/>
+  <rect width="1280" height="950" fill="url(#glow)"/>
+
+  <!-- Header -->
+  <text x="63" y="56" class="title">Release flow in practice</text>
+  <text x="63" y="84" class="sub">Example: backend v0.2.0 → v0.3.0 · frontend v0.1.2 → v0.2.0 · release 2026-11-21</text>
+
+  <!-- Input: merged PRs since the last tags -->
+  <text x="63" y="120" class="label">MERGED TO MAIN SINCE THE LAST TAGS</text>
+
+  <g transform="translate(63,130)" filter="url(#shadow)">
+    <rect width="276" height="58" rx="10" class="card"/>
+    <rect width="4" height="58" rx="2" class="green"/>
+    <text x="16" y="25" class="chipPR">#12 feat · disk usage endpoint</text>
+    <text x="16" y="46" class="chipSub">backend + frontend (shared path)</text>
+  </g>
+  <g transform="translate(355,130)" filter="url(#shadow)">
+    <rect width="276" height="58" rx="10" class="card"/>
+    <rect width="4" height="58" rx="2" class="amber"/>
+    <text x="16" y="25" class="chipPR">#13 fix · handle missing server</text>
+    <text x="16" y="46" class="chipSub">backend</text>
+  </g>
+  <g transform="translate(647,130)" filter="url(#shadow)">
+    <rect width="276" height="58" rx="10" class="card"/>
+    <rect width="4" height="58" rx="2" class="amber"/>
+    <text x="16" y="25" class="chipPR">#14 fix · dashboard refresh</text>
+    <text x="16" y="46" class="chipSub">frontend</text>
+  </g>
+  <g transform="translate(939,130)" filter="url(#shadow)">
+    <rect width="276" height="58" rx="10" class="card"/>
+    <rect width="4" height="58" rx="2" class="grey"/>
+    <text x="16" y="25" class="chipPR">#15 docs · update API examples</text>
+    <text x="16" y="46" class="chipSub">ignored, no release</text>
+  </g>
+
+  <!-- Row 1 (left to right) -->
+  <g transform="translate(63,220)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">1</text>
+    <text x="50" y="30" class="ctitle">Sync main</text>
+    <text x="16" y="60" class="mono">last tags:</text>
+    <text x="16" y="82" class="mono">  backend/v0.2.0</text>
+    <text x="16" y="104" class="mono">  frontend/v0.1.2</text>
+    <text x="16" y="126" class="mono">4 PRs, all classified</text>
+  </g>
+
+  <g transform="translate(299,220)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">2</text>
+    <text x="50" y="30" class="ctitle">Set versions</text>
+    <text x="16" y="60" class="mono">backend  v0.2.0 → <tspan class="green">v0.3.0</tspan></text>
+    <text x="16" y="82" class="mono">frontend v0.1.2 → <tspan class="green">v0.2.0</tspan></text>
+    <text x="16" y="104" class="mono">feat #12 drives both</text>
+    <text x="16" y="126" class="mono">fix #13, #14 are PATCH</text>
+  </g>
+
+  <g transform="translate(535,220)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">3</text>
+    <text x="50" y="30" class="ctitle">Open release PR</text>
+    <text x="16" y="60" class="mono">chore: release 2026-11-21</text>
+    <text x="16" y="82" class="mono">2 × CHANGELOG.md</text>
+    <text x="16" y="104" class="mono">deployments/production.yaml</text>
+    <text x="16" y="126" class="mono">only excluded paths change</text>
+  </g>
+
+  <g transform="translate(771,220)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">4</text>
+    <text x="50" y="30" class="ctitle">Merge release PR</text>
+    <text x="16" y="60" class="mono">squash → 9f3a1c2</text>
+    <text x="16" y="82" class="mono">required checks passed</text>
+    <text x="16" y="104" class="mono">main moved? redo 2 and 3</text>
+    <text x="16" y="126" class="mono">then squash merge</text>
+  </g>
+
+  <g transform="translate(1007,220)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">5</text>
+    <text x="50" y="30" class="ctitle">Build and test</text>
+    <text x="16" y="60" class="mono">build the exact commit</text>
+    <text x="16" y="82" class="mono">9f3a1c2</text>
+    <text x="16" y="104" class="mono">tests pass</text>
+    <text x="16" y="126" class="mono">later merges not included</text>
+  </g>
+
+  <!-- Row 2 (right to left, snake) -->
+  <g transform="translate(1007,430)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">6</text>
+    <text x="50" y="30" class="ctitle">Tag components</text>
+    <text x="16" y="60" class="mono">backend/v0.3.0</text>
+    <text x="16" y="82" class="mono">frontend/v0.2.0</text>
+    <text x="16" y="104" class="mono">annotated, on 9f3a1c2</text>
+    <text x="16" y="126" class="mono">never move a tag</text>
+  </g>
+
+  <g transform="translate(771,430)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">7</text>
+    <text x="50" y="30" class="ctitle">Push tags</text>
+    <text x="16" y="60" class="mono">push backend/v0.3.0</text>
+    <text x="16" y="82" class="mono">push frontend/v0.2.0</text>
+    <text x="16" y="104" class="mono">one tag per command</text>
+    <text x="16" y="126" class="mono">never git push --tags</text>
+  </g>
+
+  <g transform="translate(535,430)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">8</text>
+    <text x="50" y="30" class="ctitle">Build and deploy</text>
+    <text x="16" y="60" class="mono">backend  → image 0.3.0</text>
+    <text x="16" y="82" class="mono">frontend → image 0.2.0</text>
+    <text x="16" y="104" class="mono">released components only</text>
+    <text x="16" y="126" class="mono">unchanged ones skipped</text>
+  </g>
+
+  <g transform="translate(299,430)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">9</text>
+    <text x="50" y="30" class="ctitle">GitHub Releases</text>
+    <text x="16" y="60" class="mono">gh release create &lt;tag&gt;</text>
+    <text x="16" y="82" class="mono">--verify-tag</text>
+    <text x="16" y="104" class="mono">--notes-file: newest section</text>
+    <text x="16" y="126" class="mono">one release per tag</text>
+  </g>
+
+  <g transform="translate(63,430)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="14" class="card"/>
+    <circle cx="26" cy="24" r="14" fill="#38bdf8"/>
+    <text x="26" y="29" class="num">10</text>
+    <text x="50" y="30" class="ctitle">Verify</text>
+    <text x="16" y="60" class="mono">backend reports 0.3.0</text>
+    <text x="16" y="82" class="mono">frontend reports 0.2.0</text>
+    <text x="16" y="104" class="mono">check the changed features</text>
+    <text x="16" y="126" class="mono">then the release checklist</text>
+  </g>
+
+  <!-- Arrows: row 1 -->
+  <line x1="278" y1="295" x2="296" y2="295" class="flow"/>
+  <line x1="514" y1="295" x2="532" y2="295" class="flow"/>
+  <line x1="750" y1="295" x2="768" y2="295" class="flow"/>
+  <line x1="986" y1="295" x2="1004" y2="295" class="flow"/>
+  <!-- Connector: step 5 down to step 6 -->
+  <line x1="1112" y1="372" x2="1112" y2="426" class="flow"/>
+  <!-- Arrows: row 2 (right to left) -->
+  <line x1="1003" y1="505" x2="985" y2="505" class="flow"/>
+  <line x1="767" y1="505" x2="749" y2="505" class="flow"/>
+  <line x1="531" y1="505" x2="513" y2="505" class="flow"/>
+  <line x1="295" y1="505" x2="277" y2="505" class="flow"/>
+
+  <!-- Version rule -->
+  <g transform="translate(63,620)" filter="url(#shadow)">
+    <rect width="540" height="280" rx="14" class="card"/>
+    <text x="24" y="34" class="label">VERSION RULE</text>
+
+    <rect x="24" y="52" width="110" height="26" rx="6" fill="#a371f7" fill-opacity="0.18" stroke="#a371f7"/>
+    <text x="79" y="70" class="badge purple">MAJOR</text>
+    <text x="150" y="70" class="desc">type! (feat!, fix!): breaking change</text>
+
+    <rect x="24" y="90" width="110" height="26" rx="6" fill="#3fb950" fill-opacity="0.18" stroke="#3fb950"/>
+    <text x="79" y="108" class="badge green">MINOR</text>
+    <text x="150" y="108" class="desc">feat: new feature</text>
+
+    <rect x="24" y="128" width="110" height="26" rx="6" fill="#d29922" fill-opacity="0.18" stroke="#d29922"/>
+    <text x="79" y="146" class="badge amber">PATCH</text>
+    <text x="150" y="146" class="desc">fix, perf: bug fix or speed-up</text>
+
+    <rect x="24" y="166" width="110" height="26" rx="6" fill="#8b949e" fill-opacity="0.18" stroke="#8b949e"/>
+    <text x="79" y="184" class="badge grey">NONE</text>
+    <text x="150" y="184" class="desc">docs, style, refactor, test, build, ci, chore</text>
+
+    <text x="24" y="226" class="foot">A revert takes the bump of the type it reverts.</text>
+    <text x="24" y="244" class="foot">build bumps only if shipped output changes.</text>
+    <text x="24" y="262" class="foot">While 0.x, a breaking change bumps MINOR, not MAJOR.</text>
+  </g>
+
+  <!-- Result on main -->
+  <g transform="translate(677,620)" filter="url(#shadow)">
+    <rect width="540" height="280" rx="14" class="card"/>
+    <text x="24" y="34" class="label">RESULT ON MAIN</text>
+
+    <text x="24" y="66" class="label">TAGS</text>
+    <text x="140" y="66" class="mono12"><tspan class="green">backend/v0.3.0</tspan>   <tspan class="green">frontend/v0.2.0</tspan></text>
+
+    <text x="24" y="102" class="label">CHANGELOG</text>
+    <text x="140" y="102" class="mono12">backend   ## [0.3.0] - 2026-11-21</text>
+    <text x="140" y="124" class="mono12">frontend  ## [0.2.0] - 2026-11-21</text>
+
+    <text x="24" y="160" class="label">DEPLOYED</text>
+    <text x="140" y="160" class="mono12">backend 0.3.0 · frontend 0.2.0 (production.yaml)</text>
+
+    <text x="24" y="196" class="label">GITHUB</text>
+    <text x="140" y="196" class="mono12">one release per tag, body = newest section</text>
+
+    <text x="24" y="232" class="label" style="fill:#f85149">NEVER</text>
+    <text x="140" y="232" class="mono12">move tags · git push --tags · version in csproj</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="63" y="918" class="foot">Source: release-process.md §1 and §10. The container registry and frontend build mechanism are not decided yet.</text>
+</svg>
